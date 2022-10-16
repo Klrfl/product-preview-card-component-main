@@ -3,6 +3,7 @@
 }
 
 body{
+  background:hsl(30, 38%, 92%);
   margin: 0;
   padding: 0;
   font-family: Montserrat, sans-serif;
@@ -14,8 +15,10 @@ body{
 }
 
 .card{
+  background: hsl(0, 0%, 100%);
+  max-width: 375px;
   margin: 1em;
-  border-radius: 1em;
+  border-radius: .7em;
   overflow: hidden;
 
   display: flex;
@@ -23,16 +26,53 @@ body{
   align-items: center;
 }
 
+picture, source, img{
+  max-width: 100%;
+}
+
 .text{
-  padding: 1em;
+  padding: 1em 1.5em;
+}
+
+.type{
+  font-size: .8rem;
+  color: hsl(228, 12%, 48%);
+  letter-spacing: .5ch;
 }
 
 h2{
   font-family: Fraunces, serif;
+  font-size: 2rem;
+  line-height: 1.4ch;
+  margin: .4em 0;
 }
 
-img, source{
-  max-width:100%;
+p{
+  font-size: 14px;
+  color: hsl(228, 12%, 48%);
+  line-height: 2.5ch;
+}
+
+button.cart{
+  background: green;
+  vertical-align:text-top;
+  color: white;
+  border: none;
+  border-radius: .5em;
+  width: 100%;
+  margin: 1em 0;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.price > .price--discounted{
+  font-family: Fraunces, serif;
+  font-size: 1.7em;
+}
+
+.price > .price--original{
+  font-size: .8em;
+  color: hsl(228, 12%, 48%);
 }
 
 .attribution {
@@ -44,8 +84,13 @@ img, source{
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (min-width: 1440px){
+@media screen and (min-width: 50em){
   .card{
+    max-width: 50vw;
     flex-direction: row;
+  }
+
+  picture{
+    height: 100%;
   }
 }
