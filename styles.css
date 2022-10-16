@@ -1,0 +1,51 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+
+  /* put card in the middle */
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card{
+  margin: 1em;
+  border-radius: 1em;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text{
+  padding: 1em;
+}
+
+h2{
+  font-family: Fraunces, serif;
+}
+
+img, source{
+  max-width:100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a{
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1440px){
+  .card{
+    flex-direction: row;
+  }
+}
