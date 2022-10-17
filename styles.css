@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;600;700&display=swap');
+
+:root{
+  --green: hsla(157, 36%, 37%, 1);
+  --green-hover: hsla(157, 36%, 27%, 1);
+}
+
 *{
   box-sizing: border-box;
 }
@@ -26,12 +33,22 @@ body{
   align-items: center;
 }
 
-picture, source, img{
+picture{
   max-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  flex: 1 0;
+}
+
+img{
+ max-width: 100%;
+  /* min-height: 100%; */
+  transform: scale(1.1);
 }
 
 .text{
-  padding: 1em 1.5em;
+  padding: 1em 1.5rem;
+  flex: 1 1 0;
 }
 
 .type{
@@ -40,7 +57,7 @@ picture, source, img{
   letter-spacing: .5ch;
 }
 
-h2{
+h2.title{
   font-family: Fraunces, serif;
   font-size: 2rem;
   line-height: 1.4ch;
@@ -53,26 +70,47 @@ p{
   line-height: 2.5ch;
 }
 
-button.cart{
-  background: green;
-  vertical-align:text-top;
-  color: white;
-  border: none;
-  border-radius: .5em;
-  width: 100%;
-  margin: 1em 0;
-  padding: 1em;
-  cursor: pointer;
+
+.price{
+  margin-bottom: 1em;
+  display: flex;
+  gap: 1em;
 }
 
-.price > .price--discounted{
+h2.price--discounted{
+  margin: 0;
   font-family: Fraunces, serif;
   font-size: 1.7em;
+  color: var(--green);
 }
 
-.price > .price--original{
+.price--original{
   font-size: .8em;
   color: hsl(228, 12%, 48%);
+  position: relative;
+  top: .5em;
+}
+
+button.btn{
+  background: var(--green);
+  border: none;
+  border-radius: .5em;
+  padding: 1em;
+  
+  vertical-align: middle;
+  color: white;
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+button.btn:hover{
+  background: var(--green-hover);
 }
 
 .attribution {
@@ -86,11 +124,16 @@ button.cart{
 
 @media screen and (min-width: 50em){
   .card{
-    max-width: 50vw;
+    max-width: 600px;
     flex-direction: row;
   }
 
   picture{
     height: 100%;
+    flex: 1 1 0;
+  }
+
+  .text{
+    padding: 2rem;
   }
 }
